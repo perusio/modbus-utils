@@ -100,7 +100,7 @@ int main(int argc, char **argv)
             }
             else if (0 == strcmp(long_options[option_index].name, HoldingRegistersNo)) {
                 hrNo = getInt(optarg, &ok);
-                if (0 == ok || hrNo) {
+                if (0 == ok || hrNo < 0) {
                     printf("Cannot set holding registers no from %s", optarg);
                     printUsage(argv[0]);
                     exit(EXIT_FAILURE);
