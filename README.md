@@ -137,13 +137,13 @@ modbus_client -mtcp -c3 -r0x18 -t0x03 -p502 127.0.0.1
 + Make the first 5 coils be set to 0x1.
 
 ```bash
-modbus_client --debug -mtcp -r0x0 -t0x0f -p502 127.0.0.1 0x1 0x1 0x1 0x1 0x1
+modbus_client -mtcp -r0x0 -t0x0f -p502 127.0.0.1 0x1 0x1 0x1 0x1 0x1
 ```
 
 + Do the same using decimal notation:
 
 ```bash
-modbus_client --debug -mtcp -r0x0 -t0x0f -p502 127.0.0.1 1 1 1 1 1
+modbus_client -mtcp -r0x0 -t0x0f -p502 127.0.0.1 1 1 1 1 1
 ```
 
 NOTE: If you try to write a value different from 0 or 1, since a
@@ -153,7 +153,7 @@ if bigger than 1.
 + Read those values:
 
 ```bash
-modbus_client --debug -mtcp -r0x0 -c5 -t0x01 -p502 127.0.0.1 
+modbus_client -mtcp -r0x0 -c5 -t0x01 -p502 127.0.0.1 
 ```
  
 ## TODO
